@@ -3,7 +3,7 @@ clickhouse的sql是区分大小写的
 创建数据库
 ========
 
-CREATE DATABASE [IF NOT EXISTS] finance;
+CREATE DATABASE IF NOT EXISTS finance;
 
 创建Memory表
 ===========
@@ -51,7 +51,7 @@ Clickhouse 批量插入报错：Too many partitions for single INSERT block (mor
 
 在users.xml配置文件中进行配置。配置在 <profiles>块中, max_partitions_per_insert_block, 设置为0
 
-<profiles>中，mytest继承default
+\<profiles\>中，mytest继承default
 
 ```xml
 <mytest>
@@ -60,7 +60,7 @@ Clickhouse 批量插入报错：Too many partitions for single INSERT block (mor
 </mytest>
 ```
 
-<users>中，<hzg>增加
+\<users\>中，\<hzg\>增加
 
 ```xml
 <profile>mytest</profile>
@@ -68,7 +68,7 @@ Clickhouse 批量插入报错：Too many partitions for single INSERT block (mor
 
 经过上述配置后，导入成功
 
-clickhouse-client -u hzg --password 1234 --database=finance
+> clickhouse-client -u hzg --password 1234 --database=finance
 
 ```sql
 SELECT COUNT(*) FROM brch_qry_dtl where tran_date='2019-11-27';
