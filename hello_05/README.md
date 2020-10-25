@@ -40,6 +40,19 @@ ORDER BY (tran_date, timestamp1);
 
 字段定义的次序，对应data.csv的顺序
 
+改变PARTITION
+
+CREATE TABLE finance.brch_qry_dtl (
+    tran_date Date,
+    timestamp1 String,
+    acc String,
+    amt Decimal(10, 2),
+    dr_cr_flag Int,
+    rpt_sum String
+) ENGINE = MergeTree
+PARTITION BY toYYYYMM(tran_date)
+ORDER BY acc;
+
 导入数据
 =======
 
