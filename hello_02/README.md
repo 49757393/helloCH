@@ -40,3 +40,7 @@ clickhouse-client --password 1234
 ```
 
 > clickhouse-client -u hzg --password 1234
+
+
+远程登录
+/etc/clickhouse-server/config.xml里面<listen_host>::</listen_host>取消注释
